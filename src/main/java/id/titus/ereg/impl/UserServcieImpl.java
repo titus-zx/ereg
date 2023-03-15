@@ -4,6 +4,7 @@ import javax.inject.Named;
 
 import id.titus.ereg.model.User;
 import id.titus.ereg.service.UserService;
+import java.util.*;
 
 @Named("userService")
 public class UserServcieImpl implements UserService{
@@ -24,6 +25,15 @@ public class UserServcieImpl implements UserService{
     public long getUserCount() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getUserCount'");
+    }
+
+    @Override
+    public List<User> listUser(){
+        List<User> userList = new ArrayList<User>();  
+        return userList.stream()
+        .map(pm ->pm.ID)
+        .forEach();
+
     }
     
 }
